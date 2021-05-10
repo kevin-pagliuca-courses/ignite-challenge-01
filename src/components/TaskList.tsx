@@ -15,16 +15,14 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   function handleCreateNewTask() {
-    if (!newTaskTitle) {
-      alert("Insira um título para cadastrar uma tarefa!");
-    } else {
-      const newTask = {
-        id: Math.random() * 100 + 10,
-        title: newTaskTitle,
-        isComplete: false,
-      };
-      setTasks([...tasks, newTask]);
-    }
+    if (!newTaskTitle) return;
+    const newTask = {
+      id: Math.random() * 100 + 10,
+      title: newTaskTitle,
+      isComplete: false,
+    };
+    setTasks([...tasks, newTask]);
+
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
   }
 
